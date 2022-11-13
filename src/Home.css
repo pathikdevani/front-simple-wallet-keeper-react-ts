@@ -1,0 +1,46 @@
+.home{
+    max-width: 500px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e3e3e3;
+    margin-top: 50px;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
+}
+
+.app-help {
+    text-align: center;
+}
+
+.password-input {
+    width: 100%;
+    padding: 0px 10px;
+    border: 2px solid rgb(227, 227, 227);
+    box-sizing: border-box;
+    border-radius: 10px;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.home-button {
+    height: 40px;
+    box-sizing: border-box;
+    width:100%;
+    border-radius: 10px;
+    background: #7295ff;
+    cursor: pointer;
+    font-size: 18px;
+    border: #e3e3e3;
+    margin-top: 15px;
+}
+
+.wallet-item {
+    font-size: 14px;
+    word-break: break-all;
+    border-bottom: 1px solid #3e3e3e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
