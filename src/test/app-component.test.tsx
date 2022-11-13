@@ -9,7 +9,7 @@ import { ensurePasswordAsync } from "../store/features/auth/authThunk";
 function utils() {
   let store = storeFn();
   const renderWithProviders = (ui: React.ReactElement) => {
-    function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+    function Wrapper({ children }: PropsWithChildren<{}>): React.ReactElement {
       return <Provider store={store}>{children}</Provider>;
     }
     return { store, ...render(ui, { wrapper: Wrapper }) };

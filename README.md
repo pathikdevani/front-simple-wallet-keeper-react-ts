@@ -1,46 +1,32 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<br/>
 
-In the project directory, you can run:
+<a href="https://youtu.be/KGvN5UeA0Mc" target="_blank"><img src="https://github.com/pathikdevani/front-simple-wallet-keeper-react-ts/raw/main/showcase/youtube.png" width="100%" alt='' border="5" /></a>
 
-### `npm start`
+### End to End functionality
+- [x] Users would like to click a button to generate a Wallet
+- [x] Users would like to see a list of generated wallets.
+- [x] Users would like to see their private keys by entering their password.
+- [x] Users would like to see their balance in testnet networks
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Key points:
+- [x] Wallets should be compatible with EVM networks such as **BNB Chain** or **Ethereum**
+- [x] You can store the list of wallets in local storage.
+- [x] You should NOT store user’s passwords.
+- [x] You should NOT store user’s private keys in plaintext.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Architecture:
+There are three main part in app.
+- 1. React Components: Ex [App.tsx](./src/App.tsx)
+- 2. Application state: Redux is used [store.ts](./src/store/index.ts)
+- 3. Wallet Manager: Responsible to encrypt, decrypt, store into storage [wallet-manager.ts](./src/wallet/wallet-manager.ts) - NOTE: idea is we can write new wallet manager with `in-memory`, `server` store & also we can use `ether.js`, `wallet-core` any library to generate wallets. Easy to inject new dependency. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![plot](./showcase/architecture.png)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Testing Approach:
+As there are three main core part of as above we can write case for three way.
+- 1. react component: Example [app-component.test.tsx](./src/test/app-component.test.tsx)
+- 2. redux store: [redux-store.test.ts](./src/test/redux-store.test.ts)
+- 3. wallet manager: [wallet-manager-ether.test.ts](./src/test/wallet-manager-ether.test.ts)
