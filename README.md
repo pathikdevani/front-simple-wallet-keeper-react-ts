@@ -26,7 +26,7 @@ There are three main part in app.
 ![plot](./showcase/architecture.png)
 
 ### Testing Approach:
-As there are three main core part of as above we can write case for three way.
+As there are three main core part as above, we can write test case in three way.
 - 1. react component: Example [app-component.test.tsx](./src/test/app-component.test.tsx)
 - 2. redux store: [redux-store.test.ts](./src/test/redux-store.test.ts)
 - 3. wallet manager: [wallet-manager-ether.test.ts](./src/test/wallet-manager-ether.test.ts)
